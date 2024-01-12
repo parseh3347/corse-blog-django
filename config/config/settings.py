@@ -132,5 +132,5 @@ STATICFILES_DIRS = [BASE_DIR / 'static']
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #create me
-LOGIN_REDIRECT_URL = 'hoem'
-LOGOUT_REDIRECT_URL = 'hoem'
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
