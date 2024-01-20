@@ -1,4 +1,6 @@
 {% load static %}
+{% load crispy_forms_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -52,37 +54,29 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-       
-            <li>بسم الله الرحمن الرحیم</li>
-            <li><a href="{% url 'home' %}">HOME</a></li>
-            
-            <li><a href="{% url 'logout' %}">LOG OUT</a></li> 
-            
-            <li><a href="{% url 'signup' %}">SIGN UP</a></li>
-            <li><a href="{% url 'login' %}">LOGIN</a></li> 
-           {% if user.is_authenticated %}
-           <li>Hi {{ user.username }}!</li>
-            <li><a href="{% url 'logout' %}">Log Out</a><</li>
-            {% else %}
-            <li>You are not logged in</li>
-            <li><a href="{% url 'login' %}">Log In</a></li>
-            <li><a href="{% url 'signup' %}">SIGN UP</a></li>
-          {% endif %} 
-
-          {% comment %} <li >
-            {% if request.user.is_authenticated %}
-            <form action="{% url logout %}" method="post"></form>
-                  {% comment %} {% csrf_token %} {% endcomment %}
-                  {% comment %} {{form.as_p}}
-                  <button type="submit" class='btn btn-success'>logout</button>
-                </form>
-            {% else %}
-               <a  href="{% url 'login' %}">Login</a>
-            {% endif %}
-        {% comment %} </li> {% endcomment %} 
-
+          <li ><a href="{% url 'home' %}">Home</a></li>
+          {% if user.is_authenticated %}
+            <li class="dropdown"><a href="#">Hi  : {{ user.username}}</a>
+              <ul>
+                <li><a style="color: red" href="{% url 'logout' %}">Logout</a></li>
+                <li><hr></li>
+                <li ><a href="{% url 'password_change' %}">Password Change</a></li>
+                <li><hr></li>
+                <li ><a href="{% url 'password_reset' %}">Password Reset</a></li>
+              </ul>
+            </li>
+          {% else %}
+          <li class="dropdown"><a href="#">User</a>
+            <ul>
+              <li ><a href="{% url 'login' %}">Login</a></li>
+              
+              <li ><a href="{% url 'signup' %}">Sign Up</a></li>
+            </ul>
+          </li>
+          {% endif %}
         </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
+
+        
       </nav><!-- .navbar -->
 
     </div>
