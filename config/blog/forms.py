@@ -1,10 +1,10 @@
 
 from django import forms
-from .models import PostNewModel
+from .models import Post
 
 
 class PostForm(forms.ModelForm):
     
     class Meta:
-        model = PostNewModel
+        model = Post
         fields = ["title","excerpt","body","author","date","photo"]

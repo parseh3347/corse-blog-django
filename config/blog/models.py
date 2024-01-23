@@ -3,13 +3,13 @@ from django.views.generic import CreateView
 from datetime import date
 # Create your models here.
 
-class PostNewModel(models.Model):
+class Post(models.Model):
     title = models.CharField(max_length=50)
     excerpt = models.TextField()
     body = models.TextField()
     author = models.ForeignKey('accounts.CustomUser',on_delete=models.CASCADE)
     date = models.DateField(default = date.today)
-    photo = models.ImageField(upload_to='photo/%y/%m/%d')
+    photo = models.ImageField(upload_to='photo/%Y/%m/%d')
     
     
     def __str__(self):

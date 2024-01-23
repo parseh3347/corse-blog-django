@@ -56,7 +56,7 @@
         <ul>
           <li ><a href="{% url 'home' %}">Home</a></li>
           {% if user.is_authenticated %}
-            <li><a href="{% url 'newpost' %}">Add New Post</a></li>
+            <li><a href="{% url 'post_new' %}">Add New Post</a></li>
             <li class="dropdown"><a href="#">Hi  : {{ user.username}}</a>
               <ul>
                <li> <form action="{% url 'logout' %}" method="post">
