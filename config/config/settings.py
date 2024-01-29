@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     ##create me
     'blog.apps.BlogConfig',
     'accounts.apps.AccountsConfig',
+    # 'text_comment.apps.Text_commentConfig',
     
     
     # install me
@@ -78,6 +79,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # create post
+                'blog.context_processors.resent_posts'
             ],
         },
     },
@@ -119,9 +122,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fa-ir'#'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Tehran'#'UTC'
 
 USE_I18N = True
 
@@ -144,8 +147,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #create me
 LOGOUT_REDIRECT_URL = 'home'
 LOGIN_REDIRECT_URL = 'home'
-
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
