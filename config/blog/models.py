@@ -1,8 +1,6 @@
 from django.db import models
-from django.views.generic import CreateView
 from datetime import date
 from django.urls import reverse
-from django.shortcuts import render
 from django.utils import timezone
 # Create your models here.
 
