@@ -1,1 +1,3 @@
-این برنامه شامل یک بلاگ با جنگو 5 برای آموزش به همراه اتصال به دیتابیس sqlite برای پست گذاشتن و کامنت کذاشتن و استفاده از دستورات CRUD و همچنین سفارشی کردن یوز و پست ها
+# This is project a blog for teach
+## Include posts and comments with commands CRUD
+### You can use it for sign up, login , New post, update post 
